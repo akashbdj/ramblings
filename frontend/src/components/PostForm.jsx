@@ -24,7 +24,7 @@ export const PostForm = ({
   )
 
   const handleSubmit = useCallback(() => {
-    if (!title || !editorState) {
+    if (!currentTitle || !editorState) {
       toast.error('Title and Body are required fields!')
       return
     }
