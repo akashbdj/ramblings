@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .rdw-editor h1 {
+    @apply text-4xl;
+    @apply font-bold;
+  }
+  .rdw-editor h2 {
+    @apply text-3xl;
+    @apply font-bold;
+  }
+  .rdw-editor h3 {
+    @apply text-2xl;
+    @apply font-bold;
+  }
+  .rdw-editor h4 {
+    @apply text-xl;
+    @apply font-semibold;
+  }
+  .rdw-editor h5 {
+    @apply text-lg;
+    @apply font-semibold;
+  }
+  .rdw-editor h6 {
+    @apply text-sm;
+    @apply font-semibold;
+  }
+}
+
+.draft-html-content * {
+  margin: 0px;
+  line-height: 1.9;
+}
