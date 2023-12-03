@@ -4,6 +4,7 @@ import { Input } from './Input'
 import { RichTextEditor } from './Editor'
 import { HorizontalLayout } from './HorizontalLayout'
 import { Loader } from './Loader'
+import toast from 'react-hot-toast'
 
 export const PostForm = ({
   disable,
@@ -13,9 +14,7 @@ export const PostForm = ({
   defaultEditorState,
 }) => {
   const [currentTitle, setCurrentTitle] = useState(title)
-  const [editorState, setEditorState] = useState(
-    defaultEditorState || EditorState.createEmpty()
-  )
+  const [editorState, setEditorState] = useState(defaultEditorState)
 
   const handleTitleChange = useCallback(
     (e) => {
@@ -25,6 +24,11 @@ export const PostForm = ({
   )
 
   const handleSubmit = useCallback(() => {
+    if (!title || !editorState) {
+      toast.error('Title and Body are required fields!')
+      return
+    }
+
     const cs = editorState.getCurrentContent()
     const raw = convertToRaw(cs)
     onSubmit({
