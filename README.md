@@ -38,5 +38,6 @@
 1. There are no test cases at the moment.
 2. I didn't implement the logic to sanitize any html before saving to DB and rendering on the browser. It's not the right way because it could lead to XSS attacks.
 3. I didn't implement any login/authentication/session management logic yet.
+4. It's not responsive. However, it's pretty easy to make it with Tailwindcss.
 
 All the above improvements can be done given some more time to it.
